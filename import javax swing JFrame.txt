@@ -1,0 +1,160 @@
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+//import java.swing.JPanel;
+import javax.swing.JButton;
+
+public class BankAccount extends JFrame implements ActionListener{
+    
+    BankAccount(){
+    public static void CreateGUI(){
+ 
+ JFrame TopFrame = new JFrame("Bank Account Interface");
+ TopFrame.setLayout(new GridBagLayout()); 
+ 
+ /*
+ JButton AccountActionButton = new JButton();
+JButton DepositButton = new JButton("Deposit");
+DepositButton.addActionListener(this);
+JButton WithdrawlButton = new JButton("Withdrawl");
+WithdrawlButton.addActionListener(this);
+JButton DisplayAccountButton = new JButton("Display Account");
+DisplayAccountButton.addActionListener(this);
+ */
+ //JPanel BankAccountBalancePanel = new JPanel();
+
+ // Add First Name Label Field
+JLabel FirstNameLabel = JLabel("First Name: ");
+ GridBagConstraints layoutConstant = new GridBagConstraints();
+ layoutConstant.gridx = 0;
+ layoutConstant.gridy = 0;
+ layoutConstant.insets = new Insets(10,10,10,10);
+ TopFrame.add(FirstNameLabel, layoutConstant);
+
+// Add First Name Text Field
+ JTextField FirstNameTextField = new JTextField(15);
+layoutConstant = new GridBagConstraints();
+ layoutConstant.gridx = 1;
+ layoutConstant.gridy = 0;
+ layoutConstant.insets = new Insets(10,10,10,10);
+ FirstNameTextField.setEditable(true);
+ FirstNameTextField.addActionListener(this);
+ TopFrame.add(FirstNameTextField, layoutConstant);
+
+  // Add Last Name Label Field
+ JLabel LastNameLabel = JLabel("Last Name: ");
+layoutConstant = new GridBagConstraints();
+ layoutConstant.gridx = 0;
+ layoutConstant.gridy = 1;
+ layoutConstant.insets = new Insets(10,10,10,10);
+ TopFrame.add(LastNameLabel, layoutConstant);
+
+// Add Last Name Text Field
+ JTextField LastNameTextField = new JTextField(15);
+layoutConstant = new GridBagConstraints();
+ layoutConstant.gridx = 1;
+ layoutConstant.gridy = 1;
+ layoutConstant.insets = new Insets(10,10,10,10);
+  LastNameTextField.addActionListener(this);
+ LastNameTextField.setEditable(true);
+ TopFrame.add(LastNameTextField, layoutConstant);
+
+ // Add Account Number Label
+ JLabel AccountNumberLabel = JLabel("Account Number: ");
+layoutConstant = new GridBagConstraints();
+ layoutConstant.gridx = 0;
+ layoutConstant.gridy = 2;
+ layoutConstant.insets = new Insets(10,10,10,10);
+ TopFrame.add(AccountNumberLabel, layoutConstant);
+
+// Add Account Number Text Field
+JTextField AccountNumberTextField = new JTextField(15);
+layoutConstant = new GridBagConstraints();
+ layoutConstant.gridx = 1;
+ layoutConstant.gridy = 2;
+ layoutConstant.insets = new Insets(10,10,10,10);
+ AccountNumberTextField.setEditable(true);
+  AccountNumberTextField.addActionListener(this);
+ TopFrame.add(AccountNumberTextField, layoutConstant);
+
+ // Add Account Action Label
+JLabel AccountActionLabel = JLabel("Account Action: ");
+layoutConstant = new GridBagConstraints();
+ layoutConstant.gridx = 0;
+ layoutConstant.gridy = 3;
+ layoutConstant.insets = new Insets(10,10,10,10);
+ TopFrame.add(AccountActionLabel, layoutConstant);
+
+ // Add Account Action Text Field
+JTextField AccountActionTextField = new JTextField(15);
+layoutConstant = new GridBagConstraints();
+ layoutConstant.gridx = 1;
+ layoutConstant.gridy = 3;
+ layoutConstant.insets = new Insets(10,10,10,10);
+    AccountActionTextField.setEditable(true);
+     AccountActionTextField.addActionListener(this);
+ TopFrame.add(AccountActionTextField, layoutConstant);
+}}
+
+// Method automatically called when an event occurs 
+@Override
+public void actionPerformed(ActionEvent event){
+String FirstName;
+String LastName;
+String AccountNumber;
+String AccountAction;
+
+// get the user input fields 
+FirstName = FirstNameTextField.getText();
+LastName = LastNameTextField.getText();
+AccountNumber = AccountNumberTextField.getText();
+AccountAction = AccountActionTextField.getText();
+
+}
+
+// Method to convert user input from text fields
+public <T> converstionType(<t> userinput){
+if(userinput.contains("."){return Double parseDouble(userinput);}
+else{return Integer.parseInt(userinput);}
+}
+
+// Method to Choose which Account Action to Complete 
+/* FIXME WITH BUTTONS AND INTERFACE CONTROLS
+public static void ChooseAccountAction(){
+switch (AccountAction UserAccountAction.tolower()){
+case "balance" :
+AccountActionTextField.setText(AccountBalance); break;
+case "deposit":
+//create a new deposit interface; 
+break;
+case "withdrawl":
+//create new withdrawl interface;
+break;
+}
+default:
+// loop into another action for useraccount
+}
+FIXME WITH BUTTONS AND INTERFACE CONTROLS
+*/
+
+// Set Window Close Default
+ TopFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+ // Set the Size of Frame
+ TopFrame.pack();
+
+// Display the Frame 
+ TopFrame.setVisible(true);
+
+ // Create Main Program
+ public static void main(String[] args){
+BankAccount UserBankInterface = new BankAccount();
+UserBankInterface.CreateGUI();
+ }
+  
+}

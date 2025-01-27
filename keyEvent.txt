@@ -1,0 +1,70 @@
+public class KeyEvent extends Frame{
+
+// TextField Display Key Character Variables
+private TextField KeyEventTypedTextField = new TextField(16);
+private TextField KeyEventPressedTextField = new TextField(16);
+private TextField KeyEventReleasedTextField = new TextField(16);
+
+// Constructor - Setup the UI components and event handlers
+public KeyEvent(){
+KeyEvent frame = new KeyEvent(new FlowLayout("Key Event"));
+frame.setTitle("Key Event Title");
+frame.add(new Label("Key Event"));
+
+
+/* FIXME
+public class KeyEventListener implements ActionListener (
+@Override
+public void actionPerformed(ActionEvent actionevent){
+KeyEventListener userkeyevent = (KeyEventListener)actionevent.getSource();
+if(userkeyevent == KeyTypedListener()){
+KeyTyped(actionevent);}
+else if(userkeyevent == KeyPressedListener()){
+KeyPressed(actionevent);}
+else if(userKeyEvent == KeyReleasedEvent()){
+KeyReleased(actionevent);}
+
+FIXME */
+
+public void KeyTyped(KeyEvent keyevent){
+KeyTypedListener(KeyEvent keyevent);
+KeyTypedEvent(keyevent);}
+public void KeyPressed(KeyEvent keyevent){
+KeyPressedListener(KeyEvent keyevent);
+KeyPressedEvent(keyevent);}
+public void KeyReleased(KeyEvent keyevent){KeyReleasedListener(KeyEvent keyevent);
+KeyReleasedEvent(keyevent);}
+
+public class KeyEventListener implements ActionListener{
+
+
+
+(KeyEvent frame){
+this.frame=frame;
+}
+}
+
+addKeyEventListener(new UserKeyEventListener());
+}
+
+
+private class UserKeyEventListener implements KeyEventListener, KeyTypedListener, KeyPressedListener, KeyReleasedListener{
+
+@Override
+public void KeyTyped(KeyEvent keyevent){KeyTypedTextField.setText(keyevent + "");
+KeyTypedTextField.setEditable(false);
+add(KeyTypedTextField);}
+
+@Override 
+public void KeyPressed(KeyEvent keyevent){KeyPressedTextField.setText(keyevent + "");
+KeyPressedTextField.setEditable(false);
+add(KeyPressedTextField);}
+
+@Override 
+public void KeyReleased(KeyEvent keyevent){KeyReleasedTextField.setText(keyevent + "");
+KeyReleasedTextField.setEditable(false);
+add(KeyReleasedTextField);}
+}
+pack();
+setVisable(true);
+}}

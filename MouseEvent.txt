@@ -1,0 +1,40 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class MouseEvent extends Frame {
+private TextField MouseTextFieldX;
+private TextField MouseTextFieldY;
+
+public MouseEvent() {
+setLayout(new FlowLayout());
+add(MouseTextFieldX);
+add(MouseTextFieldY);
+addMouseEventListener(new MouseEventListener());
+}
+public static void main(String[] args){
+new MouseEvent();
+}
+
+private class MouseListenerEvent implements MouseListener, MouseMotionListener{
+
+@Override
+public void mouseClicked(MouseEvent mouseevent){
+MouseEventTextFieldX.setText(mouseevent.getX() + "");
+MouseEventTextFieldY.setText(mouseevent.getY() + "");
+}
+
+@Override public void mousePressed(MouseEvent mouseevent){}
+@Override public void mouseReleased(MouseEvent mouseevent){}
+@Override public void mouseEntered(MouseEvent mouseevent){}
+@Override public void mouseExited(MouseEvent mouseevent){}
+@Override 
+public void mouseMoved(MouseEvent mouseevent){
+private TextField MouseXPositionTextField;
+private TextField MouseYPositionTextField;
+MouseXPositionTextField.setText(mouseevent.getX()+"");
+MouseYPositionTextField.setText(mouseevent.getX()+"");
+}
+@Override
+public void mouseDragged(MouseEvent mouseevent){};
+}
+}
